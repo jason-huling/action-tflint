@@ -13,6 +13,7 @@ echo '::group:: Installing tflint ... https://github.com/terraform-linters/tflin
 curl -L "$(curl -Ls https://api.github.com/repos/terraform-linters/tflint/releases/latest | grep -o -E "https://.+?_linux_amd64.zip")" -o tflint.zip && unzip tflint.zip -d "${TEMP_PATH}" && rm tflint.zip
 echo '::endgroup::'
 
+echo INPUT_FLAGS="${INPUT_FLAGS}"
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
