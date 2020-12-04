@@ -22,10 +22,6 @@ echo '::group:: Running raw tflint ...'
 tflint ${INPUT_FLAGS} .
 echo '::endgroup::'
 
-echo '::group:: Running raw tflint w/checkstyle format ...'
-tflint --format=checkstyle ${INPUT_FLAGS} .
-echo '::endgroup::'
-
 echo '::group:: Running tflint with reviewdog 🐶 ...'
 # shellcheck disable=SC2086
 tflint --format=checkstyle ${INPUT_FLAGS} . \
