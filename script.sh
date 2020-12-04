@@ -19,7 +19,7 @@ export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
 echo '::group:: Running tflint with reviewdog 🐶 ...'
 # shellcheck disable=SC2086
-tflint --format=checkstyle ${INPUT_FLAGS} . \
+tflint --format=checkstyle --enable-rule=terraform_documented_variables --enable-rule=terraform_comment_syntax . \
   | reviewdog -f=checkstyle -name="tflint" -reporter="${INPUT_REPORTER}" -level="${INPUT_LEVEL}" -fail-on-error="${INPUT_FAIL_ON_ERROR}" -filter-mode="${INPUT_FILTER_MODE}"
 
 tflint_return="${PIPESTATUS[0]}" reviewdog_return="${PIPESTATUS[1]}" exit_code=$?
