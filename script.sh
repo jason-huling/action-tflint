@@ -9,7 +9,7 @@ echo '::group::🐶 Installing reviewdog ... https://github.com/reviewdog/review
 curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s -- -b "${TEMP_PATH}" "${REVIEWDOG_VERSION}" 2>&1
 echo '::endgroup::'
 
-echo '::group:: Installing tflint ... https://github.com/terraform-linters/tflint'
+echo '::group:: Installing tflint v0.20.3 ... https://github.com/terraform-linters/tflint'
 curl -L "$(curl -Ls https://api.github.com/repos/terraform-linters/tflint/releases/tags/v0.20.3 | grep -o -E "https://.+?_linux_amd64.zip")" -o tflint.zip && unzip tflint.zip -d "${TEMP_PATH}" && rm tflint.zip
 echo '::endgroup::'
 
