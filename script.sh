@@ -16,6 +16,8 @@ echo '::endgroup::'
 
 export REVIEWDOG_GITHUB_API_TOKEN="${INPUT_GITHUB_TOKEN}"
 
+echo INPUT_LEVEL="${INPUT_LEVEL}"
+
 echo '::group:: Running raw tflint ...'
 tflint ${INPUT_FLAGS} .
 echo '::endgroup::'
